@@ -1,0 +1,48 @@
+spring:
+  redis:
+    host: 10.10.2.217
+    # 端口，默认为6379
+    port: 32426
+    password: Parav1ew
+    # 连接超时时间
+    database: 0
+    timeout: 5000
+    jedis:
+      pool:
+        # 连接池中的最小空闲连接
+        min-idle: 5
+        # 连接池中的最大空闲连接
+        max-idle: 10
+        # 连接池的最大数据库连接数
+        max-active: 20
+        # #连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: 2000
+        testOnCreate: true
+        testOnBorrow: true
+        testOnReturn: true
+        testWhileIdle: true
+    lettuce:
+      cluster:
+        refresh:
+          adaptive: true
+        period: 60000
+      pool:
+        # 连接池中的最小空闲连接
+        min-idle: 5
+        # 连接池中的最大空闲连接
+        max-idle: 10
+        # 连接池的最大数据库连接数
+        max-active: 20
+        # #连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: 2000
+        testOnCreate: true
+        testOnBorrow: true
+        testOnReturn: true
+        testWhileIdle: true
+
+bloom:
+  enable: true
+  missRate: 0.03
+  size: 10
+  expireTime: 60000
+  reset: 180
