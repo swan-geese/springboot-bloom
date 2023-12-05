@@ -46,3 +46,6 @@ bloom:
   size: 10
   expireTime: 60000
   reset: 180
+
+logging:
+  config: classpath:logback-spring.xml
